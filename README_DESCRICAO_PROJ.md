@@ -49,7 +49,7 @@ npm install
 
 4. Iniciar o Servidor: Após a instalação ser concluída, execute o seguinte comando para iniciar o servidor de desenvolvimento.
 ```bash
-npm run dev
+npm run devs
 ```
 
 5. Acessar no Navegador: Abra seu navegador e acesse a URL que aparecerá no terminal (geralmente http://localhost:5173). A aplicação estará rodando.
