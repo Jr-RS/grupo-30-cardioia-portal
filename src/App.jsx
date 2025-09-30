@@ -8,31 +8,34 @@ import NewAppointment from './pages/NewAppointment';
 import Login from './pages/Login';
 import ProtectedRoute from './components/ProtectedRoute';
 import { AuthProvider } from './contexts/AuthContext';
+import { AppointmentProvider } from './contexts/AppointmentContext';
 import './App.css';
 
 function App() {
   return (
     <AuthProvider>
-      <Layout>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route path="/" element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          } />
-          <Route path="/patients" element={
-            <ProtectedRoute>
-              <Patients />
-            </ProtectedRoute>
-          } />
-          <Route path="/agendamento" element={
-            <ProtectedRoute>
-              <NewAppointment />
-            </ProtectedRoute>
-          } />
-        </Routes>
-      </Layout>
+      <AppointmentProvider>
+        <Layout>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/" element={
+              <ProtectedRoute>
+                <Dashboard />
+              </ProtectedRoute>
+            } />
+            <Route path="/patients" element={
+              <ProtectedRoute>
+                <Patients />
+              </ProtectedRoute>
+            } />
+            <Route path="/agendamento" element={
+              <ProtectedRoute>
+                <NewAppointment />
+              </ProtectedRoute>
+            } />
+          </Routes>
+        </Layout>
+      </AppointmentProvider>
     </AuthProvider>
   );
 }

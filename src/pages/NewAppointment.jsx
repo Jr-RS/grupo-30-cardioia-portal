@@ -1,4 +1,5 @@
-import React, { useReducer } from 'react';
+import React, { useReducer, useContext } from 'react';
+import { AppointmentContext } from '../contexts/AppointmentContext';
 import styles from './NewAppointment.module.css';
 
 const initialState = {
@@ -21,6 +22,7 @@ function formReducer(state, action) {
 
 const NewAppointment = () => {
   const [state, dispatch] = useReducer(formReducer, initialState);
+  const { addAppointment } = useContext(AppointmentContext);
 
   const handleChange = (e) => {
     dispatch({
@@ -32,7 +34,10 @@ const NewAppointment = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Dados do agendamento:', state);
+    addAppointment({ ...state });
+    dispatch({ type: 'SET_FIELD', field: 'patientName', value: '' });
+    dispatch({ type: 'SET_FIELD', field: 'appointmentDate', value: '' });
+    dispatch({ type: 'SET_FIELD', field: 'details', value: '' });
   };
 
   return (
