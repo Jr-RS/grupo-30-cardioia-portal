@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # CardioIA - Portal de Interface
 
@@ -31,3 +32,6 @@ Este projeto é uma interface web desenvolvida em React para um portal de cardio
 
 ---
 
+=======
+# grupo-30-cardioia-portal
+>>>>>>> 24c92068d1df7809098a04700044af8e70666193
