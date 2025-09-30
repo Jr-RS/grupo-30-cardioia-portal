@@ -1,0 +1,20 @@
+.container {
+  max-width: 600px;
+  margin: 3rem auto;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 24px rgba(44,62,80,0.08);
+  padding: 30px;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.metric {
+  font-size: 1.5rem;
+  color: #1976d2;
+  margin-top: 1rem;
+}
