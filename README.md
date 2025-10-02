@@ -86,9 +86,9 @@ A aplicação foi desenvolvida sobre quatro pilares principais:
 
 ### 🧭 Fluxo do Usuário
 1. O usuário inicia na tela de login.  
-  - Se tentar acessar outra página diretamente pela URL → será redirecionado ao login.  
+   - Se tentar acessar outra página diretamente pela URL → será redirecionado ao login.  
 2. Após clicar em **“Fazer Login”**, um token falso é gerado e armazenado no `localStorage`.  
-  - O usuário é redirecionado para o Dashboard.
+   - O usuário é redirecionado para o Dashboard.
 3. No Dashboard, ele visualiza:  
    - Número total de pacientes (base simulada).  
    - Número de consultas agendadas (dinâmico).  
@@ -99,13 +99,28 @@ A aplicação foi desenvolvida sobre quatro pilares principais:
   - O token é removido e o usuário perde o acesso às rotas protegidas.
 
 ### 📂 Estrutura do Repositório
-- `assets/` → imagens usadas na documentação.  
-- `src/` → código-fonte do portal.  
-  - `contexts/` → AuthContext e AppointmentContext. 
-  - `components/` → componentes reutilizáveis.  
-  - `pages/` → Login, Dashboard, Pacientes, Agendamento.  
-  - `services/` → simulação de APIs/dados locais.  
-- `README.md` → documentação geral do projeto.  
+
+- **public/** → contém arquivos estáticos acessíveis publicamente (ex.: favicon, imagens públicas).
+- **src/** → código-fonte da aplicação.
+  - **contexts/** → Context API para gerenciamento global de estado.
+     - `AuthContext.jsx` → gerencia autenticação (login, logout, token fake JWT).
+     - `AppointmentContext.jsx` → controla agendamentos e atualiza o dashboard em tempo real.
+  - **components/** → componentes reutilizáveis da interface (ex.: Header, ProtectedRoute).
+  - **pages/** → páginas principais da aplicação.
+    - `Login.jsx` → tela inicial de login.
+    - `Dashboard.jsx` → exibe métricas de pacientes e agendamentos.
+    - `Pacientes.jsx` → lista pacientes de base simulada.
+    - `Agendamento.jsx` → formulário de agendamento com useReducer.
+  - **services/** → serviços auxiliares (ex.: dados simulados de pacientes).
+- **.gitignore** → define arquivos e pastas ignorados pelo Git.
+- **eslint.config.js** → configuração de lint para padronização de código.
+- **index.html** → arquivo base da aplicação.
+- **package.json e package-lock.json** → dependências e scripts do projeto.
+- **vite.config.js** → configuração do Vite.
+- **README.md** → documentação geral do projeto (este arquivo).
+
+---
+
 
 ### 🛠️ Tecnologias Utilizadas
 - **React + Vite** (framework principal)  
