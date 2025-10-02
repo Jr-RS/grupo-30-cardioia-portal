@@ -96,7 +96,7 @@ A aplicação foi desenvolvida sobre quatro pilares principais:
 5. Na página **Agendamento**, pode cadastrar novas consultas.  
    - Cada agendamento aumenta automaticamente o contador no Dashboard.  
 6. Ao clicar em “Sair”, a sessão é encerrada.
-  - O token é removido e o usuário perde o acesso às rotas protegidas.
+   - O token é removido e o usuário perde o acesso às rotas protegidas.
 
 ### 📂 Estrutura do Repositório
 
